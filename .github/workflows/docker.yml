@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     env:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -63,7 +63,6 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        platforms: linux/arm64
         tags: ${{ env.DOCKER_TAG_LIST }}
 
     - name: Send Compile action
